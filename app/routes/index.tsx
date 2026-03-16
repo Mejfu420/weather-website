@@ -1,13 +1,13 @@
 import type { Route } from "./+types/index";
-import currentWeather from "~/libs/currentWeather";
+import Home from "~/pages/home";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Weather App" },
+    { title: "WeatherApp" },
     { name: "description", content: "Check weather for chosen location!" },
   ];
 }
 
 export default function Index() {
-    return <></>;
+    return <Home />;
 }

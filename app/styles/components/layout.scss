@@ -1,9 +1,9 @@
-@use "~/styles/config/variables" as *;
+@use "../../styles/config/variables" as *;
 
 .layout-section {
   box-sizing: border-box;
-  padding-bottom: 96px;
-  padding-top: 96px;
+  padding-bottom: 48px;
+  padding-top: 48px;
   width: 100%;
 
   &.clear {

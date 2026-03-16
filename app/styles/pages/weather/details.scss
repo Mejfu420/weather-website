@@ -1,0 +1,50 @@
+@use "../../config/variables" as *;
+
+.details-header {
+    .layout-container {
+        @include flex(row, wrap, center, space-between, 20px);
+    }
+}
+
+.location-meta {
+    @include flex(column, nowrap, flex-start, center, 6px);
+
+    h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: $color-text-primary;
+        margin: 0;
+
+        span {
+            color: $color-accent;
+        }
+    }
+
+    .coords {
+        font-size: 0.9rem;
+        color: $color-text-subtle;
+    }
+}
+
+.sun-times {
+    @include flex(row, nowrap, center, center, 18px);
+
+    span {
+        padding: 8px 14px;
+        border-radius: $border-radius;
+        background: $color-bg-element;
+        color: $color-text-muted;
+        font-size: 0.9rem;
+
+        @include box-shadow(0.1);
+    }
+}
+
+@media (max-width: 768px) {
+    .details-header {
+        .layout-container {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+}

@@ -5,7 +5,7 @@ import forecastWeather from "~/libs/forecastWeather";
 
 import WeatherDetails from "~/pages/weather";
 
-interface Data {
+export interface Data {
     weather: object | null,
     forecast: object | null,
     searchedCity: string | null
@@ -13,7 +13,7 @@ interface Data {
 
 export function meta({ }: Route.MetaArgs) {
     return [
-        { title: "Weather App" },
+        { title: "WeatherApp" },
         { name: "description", content: "Check weather for chosen location!" },
     ];
 }
@@ -37,9 +37,6 @@ export async function loader({ request }: LoaderFunctionArgs) {
 
 export default function Weather({ loaderData }: Route.ComponentProps) {
     const data: Data = loaderData;
-
-    console.log(data?.weather);
-    console.log(data?.forecast);
 
     return <WeatherDetails data={data} />;
 }

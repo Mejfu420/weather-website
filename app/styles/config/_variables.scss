@@ -1,0 +1,45 @@
+// Variables
+
+$color-bg-primary: #19191c;
+$color-bg-element: #27282c;
+
+$color-text-primary: #FFF;
+$color-text-muted: #f4f4f4;
+$color-text-subtle: rgba(255, 255, 255, 0.7);
+
+$color-accent: #F59E0B;
+$color-accent-hover: rgba($color-accent, 0.9);
+$color-accent-soft: rgba($color-accent, 0.15);
+
+$color-nav-bg-primary: $color-bg-primary;
+$color-nav-text-primary: $color-text-primary;
+$color-nav-text-muted: rgba(255, 255, 255, 0.7);
+
+$border-radius: 8px;
+$transition-speed: 0.3s ease;
+
+// Mixins
+
+@mixin flex($dir: row, $wrap: nowrap, $align: center, $justify: center, $gap: 10px) {
+    display: flex;
+    flex-flow: $dir $wrap;
+    align-items: $align;
+    justify-content: $justify;
+    gap: $gap
+}
+
+@mixin box-shadow($opacity: 0.1, $spread: 15px) {
+    box-shadow: 0 4px $spread rgba(0, 0, 0, $opacity);
+    transition: box-shadow 0.3s ease-in-out;
+
+    &:hover {
+        box-shadow: 0 8px $spread + 5px rgba(0, 0, 0, $opacity + 0.05);
+    }
+}
+
+@mixin glass-effect {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    @include box-shadow(0.15);
+}

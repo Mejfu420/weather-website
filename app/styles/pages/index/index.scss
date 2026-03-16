@@ -1,0 +1,61 @@
+@use "../../config/variables" as *;
+
+.home-page {
+    @include flex($dir: column, $gap: 48px, $justify: center);
+    width: 100%;
+    min-height: calc(100vh - 64px);
+    padding: 2rem;
+    background-color: $color-bg-primary;
+    text-align: center;
+
+    &-title {
+        @include flex($dir: column, $gap: 16px);
+        max-width: 800px;
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            color: $color-text-primary;
+            margin: 0;
+
+            span {
+                color: $color-accent;
+                text-shadow: 0 0 20px rgba($color-accent, 0.2);
+            }
+        }
+
+        p {
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            color: $color-text-subtle;
+            max-width: 580px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+    }
+
+    &-search {
+        @include flex($dir: column);
+        width: 100%;
+        max-width: 540px;
+    }
+}
+
+// Breakpoints
+
+@media (max-width: 768px) {
+    .home-page {
+        gap: 32px;
+        justify-content: flex-start;
+        padding-top: 15vh;
+        min-height: calc(100vh - 128px);
+
+        .search-form {
+            @include flex($dir: column, $gap: 20px);
+
+            input {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+@use "../../config/variables" as *;
+
+.details-header *,
+.weather-section * {
+    cursor: default;
+}
+
+h3 {
+    color: $color-text-subtle;
+    font-weight: 300;
+    font-size: 15px;
+}
